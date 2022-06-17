@@ -1,13 +1,17 @@
 package datastructures.basic;
 
-public interface List {
-    <T> T retrieveLastElement();
+public interface List<T> {
+    T retrieveLastElement();
 
-    <T> T insertElement(T t);
+    T insertElement(T t);
 
-    <T> T removeElement(int elementPosition);
+    T removeElement(int elementPosition);
 
-    <T> T retrieveElement(int elementPosition);
+    T retrieveElement(int elementPosition);
 
-    <T> T findElement(T t);
+    T findElement(T t);
+
+    T insertElementBeginning(T t);
+
+    T insertElementNthPosition(T t, int elementPosition);
 }

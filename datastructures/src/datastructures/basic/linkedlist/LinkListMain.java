@@ -1,13 +1,15 @@
 package datastructures.basic.linkedlist;
 
+
 public class LinkListMain {
 
     public static void main(String[] args) {
-        Node node1 = new Node();
-        node1.setNext(null);
-        node1.setValue("1");
-
-        LinkedList linkedList = new LinkedList(node1);
+        LinkedList<Integer> linkedList = new LinkedList<>();
+        linkedList.insertElement(2);
+        linkedList.insertElement(3);
+        linkedList.insertElementNthPosition(1, 1);
+        linkedList.insertElementNthPosition(4, 4);
+        linkedList.reverseRecursively(linkedList.getHead());
         linkedList.printLinkedList();
     }
 }
