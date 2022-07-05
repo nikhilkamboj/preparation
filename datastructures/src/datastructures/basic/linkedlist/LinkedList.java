@@ -3,6 +3,8 @@ package datastructures.basic.linkedlist;
 import datastructures.basic.List;
 import datastructures.basic.Node;
 
+import java.util.Stack;
+
 public class LinkedList<T> implements List<T> {
     private Node<T> head;
 
@@ -170,5 +172,22 @@ public class LinkedList<T> implements List<T> {
        reverseRecursively(nextNode);
        nextNode.setNext(node);
        node.setNext(null);
+    }
+
+    public void reverseUsingStack() {
+        Node<T> temp = head;
+        Stack<Node<T>> stack = new Stack<>();
+        while (temp != null) {
+            stack.push(temp);
+            temp = temp.getNext();
+        }
+        head = stack.peek();
+        Node<T> prev = stack.pop();
+        while (!stack.isEmpty()) {
+            temp = stack.pop();
+            prev.setNext(temp);
+            prev = temp;
+        }
+        prev.setNext(null);
     }
 }
