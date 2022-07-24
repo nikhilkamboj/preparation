@@ -243,17 +243,18 @@ public class ArrayQuestions {
          if (s1.length() + index > s2.length) {
              return false;
          }
-         for (int i = index; i < s1.length() + index ; i++) {
-             if (s2[i] != s1.charAt(i)) {
+         for (int i = 0; i < s1.length(); i++) {
+             if (s2[index] != s1.charAt(i)) {
                  return false;
              }
+             index++;
          }
          return true;
      }
 
     public static void main(String[] args) {
         ArrayQuestions aq = new ArrayQuestions();
-        System.out.println(aq.compressString("aabcccccaaa"));
+        System.out.println(aq.isRotation("waterbottle", "terbottlewa"));
     }
 
 }
